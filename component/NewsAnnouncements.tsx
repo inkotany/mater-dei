@@ -58,8 +58,60 @@ export default function NewsAnnouncements() {
   if (loading) {
     return (
       <section id="news" className="py-16 bg-white">
-        <div className="container max-w-5xl mx-auto px-6 text-center">
-          Loading content...
+        <div className="container max-w-5xl mx-auto px-6 text-center space-y-10">
+          {/* Header skeleton */}
+          <div className="mx-auto max-w-3xl space-y-4">
+            <div className="h-10 w-64 bg-gray-300 rounded mx-auto animate-pulse"></div>
+            <div className="h-6 w-96 bg-gray-300 rounded mx-auto animate-pulse"></div>
+          </div>
+
+          {/* Announcements skeleton */}
+          <div className="space-y-6 max-w-3xl mx-auto">
+            {[...Array(2)].map((_, i) => (
+              <div
+                key={`announcement-skel-${i}`}
+                className="border border-gray-100 rounded-xl p-6 shadow-sm bg-white animate-pulse"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="bg-sky-50 p-2 rounded-lg w-8 h-8"></div>
+                  <div className="flex-1 space-y-3 py-1">
+                    <div className="h-6 bg-gray-300 rounded w-3/4"></div>
+                    <div className="h-4 bg-gray-300 rounded w-1/2"></div>
+                    <div className="h-4 bg-gray-300 rounded w-full"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Events skeleton */}
+          <div className="max-w-5xl mx-auto space-y-6">
+            {[...Array(2)].map((_, i) => (
+              <div
+                key={`event-skel-${i}`}
+                className="bg-sky-50 rounded-lg p-5 border border-sky-100 animate-pulse max-w-md mx-auto"
+              >
+                <div className="h-5 bg-sky-200 rounded w-3/4 mb-2"></div>
+                <div className="flex items-center text-gray-600 gap-2">
+                  <div className="w-4 h-4 bg-sky-200 rounded"></div>
+                  <div className="h-4 bg-gray-300 rounded w-1/4"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* PDFs skeleton */}
+          <div className="max-w-5xl mx-auto space-y-6">
+            {[...Array(2)].map((_, i) => (
+              <div
+                key={`pdf-skel-${i}`}
+                className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-lg shadow-sm animate-pulse max-w-md mx-auto"
+              >
+                <div className="bg-sky-100 p-2 rounded-lg w-6 h-6"></div>
+                <div className="h-6 bg-gray-300 rounded w-3/4"></div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     );

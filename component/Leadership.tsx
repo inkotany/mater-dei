@@ -73,8 +73,29 @@ export default function Leadership() {
   if (loading) {
     return (
       <section id="leadership" className="py-20 bg-white">
-        <div className="container mx-auto px-6 max-w-6xl text-center">
-          <p>Loading leadership team...</p>
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="text-center mb-16">
+            <div className="h-12 w-64 mx-auto bg-gray-200 rounded animate-pulse mb-4"></div>
+            <div className="h-6 w-96 mx-auto bg-gray-200 rounded animate-pulse"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[...Array(6)].map((_, i) => (
+              <div
+                key={i}
+                className="bg-gray-50 rounded-xl shadow-md overflow-hidden p-6 flex flex-col items-center animate-pulse"
+              >
+                <div className="h-8 w-28 bg-gray-200 rounded-full mb-6"></div>
+                <div className="h-40 w-40 rounded-full bg-gray-300 mb-6"></div>
+                <div className="h-6 w-32 bg-gray-200 rounded mb-2"></div>
+                <div className="h-5 w-20 bg-gray-200 rounded"></div>
+                <div className="mt-4 h-10 w-full bg-gray-200 rounded"></div>
+                <div className="mt-6 w-full space-y-2">
+                  <div className="h-4 w-full bg-gray-200 rounded"></div>
+                  <div className="h-4 w-full bg-gray-200 rounded"></div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     );

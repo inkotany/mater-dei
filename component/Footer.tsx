@@ -1,13 +1,15 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="bg-sky-700 text-white">
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* School Identity */}
         <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <div className="bg-white rounded-full p-2">
+          <div className="flex items-center gap-2">
+            <div className="rounded-full bg-sky-100 p-1 ">
               {/* Replace with actual logo */}
-              <svg
+              {/* <svg
                 className="w-8 h-8 text-sky-700"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -36,11 +38,17 @@ export default function Footer() {
                   strokeWidth="2"
                   strokeLinejoin="round"
                 />
-              </svg>
+              </svg> */}
+              <Image
+                src={"/md-logo.png"}
+                width={60}
+                height={60}
+                alt={""}
+              ></Image>
             </div>
             <h3 className="text-2xl font-bold">Mater Dei School</h3>
           </div>
-          <p className="text-sm leading-relaxed">
+          <p className="text-sm  text-left leading-relaxed">
             A Catholic institution in Nyanza, Rwanda, forming future leaders
             through academic excellence, spiritual growth, and service to
             community since 1985.
@@ -56,10 +64,10 @@ export default function Footer() {
             {[
               { name: "Home", href: "/" },
               { name: "About Us", href: "/about" },
-              { name: "Academics", href: "/academics" },
-              { name: "Faith Life", href: "/faith" },
-              { name: "Admissions", href: "/admissions" },
-              { name: "Contact", href: "/contact" },
+              { name: "Academics", href: "/#academics" },
+              // { name: "Faith Life", href: "/faith" },
+              { name: "Admissions", href: "/#admissions" },
+              { name: "Contact", href: "/#contact" },
             ].map((link) => (
               <li key={link.name}>
                 <a
@@ -113,7 +121,7 @@ export default function Footer() {
                 />
               </svg>
               <span>
-                MP2V+5V3, Nyanza
+                Nyanza
                 <br />
                 Southern Province, Rwanda
               </span>

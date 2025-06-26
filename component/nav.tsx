@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,10 +61,16 @@ export function NavBar() {
               <motion.span
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`text-xl font-bold ${
+                className={`text-xl font-bold flex items-center justify-center gap-4 ${
                   isScrolled ? "text-sky-600 " : "text-indigo-100"
                 }`}
               >
+                <Image
+                  src={"/md-logo.png"}
+                  width={60}
+                  height={60}
+                  alt={""}
+                ></Image>{" "}
                 G.S Mater <span className="text-sky-500">Dei</span> Nyanza
               </motion.span>
             </Link>
@@ -80,7 +87,7 @@ export function NavBar() {
                   href={link.href}
                   className={`${
                     isScrolled
-                      ? "text-sky-500 hover:text-indigo-100"
+                      ? "text-sky-500 hover:bg-sky-400"
                       : "text-indigo-100 hover:text-sky-500"
                   } transition-colors duration-200 font-medium`}
                 >
@@ -102,7 +109,7 @@ export function NavBar() {
               href="/studio"
               className={`px-6 py-1 rounded-md transition-colors duration-200 font-medium ${
                 isScrolled
-                  ? "bg-sky-600 text-indigo-100 hover:bg-gray-100"
+                  ? "bg-sky-600 text-indigo-100 hover:bg-sky-400"
                   : "bg-sky-500 text-indigo-900 hover:bg-sky-400"
               }`}
             >

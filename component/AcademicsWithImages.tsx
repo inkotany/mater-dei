@@ -30,13 +30,13 @@ export default function AcademicsWithImages() {
     },
   };
 
-  const fadeIn: Variants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { duration: 0.8 },
-    },
-  };
+  // const fadeIn: Variants = {
+  //   hidden: { opacity: 0 },
+  //   show: {
+  //     opacity: 1,
+  //     transition: { duration: 0.8 },
+  //   },
+  // };
 
   const imageCard: Variants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -194,7 +194,7 @@ export default function AcademicsWithImages() {
         </motion.div>
 
         {/* Extracurricular */}
-        <motion.div
+        {/* <motion.div
           initial="hidden"
           whileInView="show"
           variants={container}
@@ -251,7 +251,7 @@ export default function AcademicsWithImages() {
               className="absolute inset-0 bg-gradient-to-r from-sky-900/30 to-transparent"
             />
           </motion.div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

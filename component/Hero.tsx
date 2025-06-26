@@ -39,7 +39,33 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, [backgroundImages]);
 
-  if (backgroundImages.length === 0) return null; // optional: loading spinner
+  // Skeleton loader while images load
+  if (backgroundImages.length === 0) {
+    return (
+      <>
+        <NavBar />
+        <section
+          className="relative h-screen max-h-[800px] w-full flex flex-col items-center justify-center bg-gray-800"
+          ref={constraintsRef}
+        >
+          {/* Skeleton rectangle for image */}
+          <div className="absolute inset-0 bg-gray-700 animate-pulse"></div>
+
+          {/* Gradient overlay placeholder */}
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-900/50 z-10 flex items-center justify-center">
+            <div className="max-w-3xl w-full px-4 text-center space-y-6">
+              <div className="h-12 bg-gray-600 rounded mx-auto w-3/4 animate-pulse"></div>
+              <div className="h-6 bg-gray-600 rounded mx-auto w-1/2 animate-pulse"></div>
+              <div className="flex justify-center gap-4 mt-8">
+                <div className="h-10 w-32 bg-gray-600 rounded animate-pulse"></div>
+                <div className="h-10 w-32 bg-gray-600 rounded animate-pulse"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </>
+    );
+  }
 
   return (
     <>
@@ -98,14 +124,14 @@ export default function Hero() {
                   show: { opacity: 1, y: 0 },
                 }}
               >
+                Educating Hearts & Minds in Nyanza
                 <motion.span
                   className="text-sky-500"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Empowering
+                  Since 1952
                 </motion.span>{" "}
-                Tomorrow&apos;s Leaders Through Excellence
               </motion.h1>
 
               <motion.p
@@ -115,9 +141,7 @@ export default function Hero() {
                   show: { opacity: 1, y: 0 },
                 }}
               >
-                Our innovative learning environment fosters academic
-                achievement, character development, and lifelong success for
-                every student.
+                A Catholic Legacy of Academic Excellence & Spiritual Growth
               </motion.p>
 
               <motion.div
@@ -132,22 +156,10 @@ export default function Hero() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Link
-                    href="/admissions"
+                    href="/#admissions"
                     className="px-6 py-2 flex justify-center items-center bg-sky-500 text-indigo-100 font-semibold rounded-sm hover:opacity-80 transition-all duration-300 shadow-md hover:shadow-xl text-center"
                   >
-                    Start Your Journey
-                  </Link>
-                </motion.div>
-
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Link
-                    href="/tour"
-                    className="px-6 py-2 border-1 border-gray-200 text-indigo-100 font-semibold rounded-sm hover:bg-sky-500 hover:text-indigo-100 hover:border-0 transition-all duration-50 text-center"
-                  >
-                    Take a Virtual Tour
+                    Start With Us
                   </Link>
                 </motion.div>
               </motion.div>

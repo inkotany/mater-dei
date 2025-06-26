@@ -31,78 +31,80 @@ export default function ContactUs() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-1 gap-12">
           {/* Contact Information */}
-          <div className="space-y-8">
-            <div className="bg-sky-50 p-8 rounded-xl">
-              <h3 className="text-2xl font-semibold text-sky-600 mb-4">
-                Our Location
-              </h3>
-              <address className="not-italic">
-                <p className="text-lg mb-2">Mater Dei School</p>
-                <p className="text-gray-700">Nyanza District</p>
-                <p className="text-gray-700">Southern Province, Rwanda</p>
-              </address>
+          <div className="space-y-8 w-full  p-4 ">
+            <div className="flex gap-10 ">
+              <div className="bg-sky-50 p-8 rounded-xl">
+                <h3 className="text-2xl font-semibold text-sky-600 mb-4">
+                  Our Location
+                </h3>
+                <address className="not-italic">
+                  <p className="text-lg mb-2">Mater Dei School</p>
+                  <p className="text-gray-700">Nyanza District</p>
+                  <p className="text-gray-700">Southern Province, Rwanda</p>
+                </address>
 
-              <p className="mt-4 text-gray-700">
-                Nestled in the heart of Rwanda's cultural capital, our campus
-                blends modern education with the rich traditions of Nyanza.
-              </p>
-            </div>
+                <p className="mt-4 text-gray-700">
+                  Nestled in the heart of Rwanda's cultural capital, our campus
+                  blends modern education with the rich traditions of Nyanza.
+                </p>
+              </div>
 
-            <div className="bg-sky-50 p-8 rounded-xl">
-              <h3 className="text-2xl font-semibold text-sky-600 mb-4">
-                Contact Details
-              </h3>
-              <div className="space-y-3">
-                <p className="flex items-center gap-2 text-gray-700">
-                  <svg
-                    className="w-5 h-5 text-sky-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
-                  +250 788 123 456 (Office)
-                </p>
-                <p className="flex items-center gap-2 text-gray-700">
-                  <svg
-                    className="w-5 h-5 text-sky-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                  info@materdeinyanza.rw
-                </p>
-                <p className="flex items-center gap-2 text-gray-700">
-                  <svg
-                    className="w-5 h-5 text-sky-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  Office Hours: 7:30 AM - 4:30 PM (Mon-Fri)
-                </p>
+              <div className="bg-sky-50 p-8 rounded-xl">
+                <h3 className="text-2xl font-semibold text-sky-600 mb-4">
+                  Contact Details
+                </h3>
+                <div className="space-y-3">
+                  <p className="flex items-center gap-2 text-gray-700">
+                    <svg
+                      className="w-5 h-5 text-sky-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      />
+                    </svg>
+                    +250 788 123 456 (Office)
+                  </p>
+                  <p className="flex items-center gap-2 text-gray-700">
+                    <svg
+                      className="w-5 h-5 text-sky-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                    info@materdeinyanza.rw
+                  </p>
+                  <p className="flex items-center gap-2 text-gray-700">
+                    <svg
+                      className="w-5 h-5 text-sky-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    Office Hours: 7:30 AM - 4:30 PM (Mon-Fri)
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -158,8 +160,8 @@ export default function ContactUs() {
               <iframe
                 className="w-full h-full"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17937.715516825974!2d29.74731200775091!3d-2.3529398435119804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c33f006ae4d139%3A0xbbc0a19789311253!2sMater%20dei!5e0!3m2!1sfr!2sca!4v1750637683987!5m2!1sfr!2sca"
-                width="600"
-                height="450"
+                width="500"
+                height="350"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
