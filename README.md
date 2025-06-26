@@ -116,4 +116,4 @@ TypeScript – Type-safe JavaScript
 
 ![Screenshot](asset/event.png)
 
-![Screenshot](asset/footer.png)
+![Footer Screenshot](asset/footer.png)
