@@ -110,7 +110,7 @@ Framer Motion – Animation for React
 Tailwind CSS – Utility-first CSS
 TypeScript – Type-safe JavaScript
 
-![Screenshot](asset/hero.png)
+![Screenshot](public/asset/hero.png)
 
 ![Screenshot](asset/acadimic.png)
 
