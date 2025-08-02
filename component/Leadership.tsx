@@ -24,18 +24,6 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
 async function getLeaders(): Promise<Leader[]> {
   const query = `*[_type == "leader"]{
     name,
@@ -43,7 +31,7 @@ async function getLeaders(): Promise<Leader[]> {
     role,
     phone,
     email,
-    "photoUrl": photoUrl.asset->url,
+    "photoUrl": photo.asset->url,
     bio
   }`;
 
@@ -59,6 +47,7 @@ export default function Leadership() {
     const fetchLeaders = async () => {
       try {
         const data = await getLeaders();
+        console.log("Fetching leaders data...", data);
         setLeaders(data);
       } catch (error) {
         console.error("Error fetching leaders:", error);
@@ -78,6 +67,7 @@ export default function Leadership() {
             <div className="h-12 w-64 mx-auto bg-gray-200 rounded animate-pulse mb-4"></div>
             <div className="h-6 w-96 mx-auto bg-gray-200 rounded animate-pulse"></div>
           </div>
+          {/* skeleton  */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[...Array(6)].map((_, i) => (
               <div
