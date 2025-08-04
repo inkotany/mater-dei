@@ -288,7 +288,7 @@ export default function NewsAnnouncements() {
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center gap-3 mb-6">
+            <div id="Downloadable" className="flex items-center gap-3 mb-6">
               <div className="bg-sky-100 p-2 rounded-lg">
                 <svg
                   className="w-6 h-6 text-sky-600"
@@ -305,7 +305,7 @@ export default function NewsAnnouncements() {
                 </svg>
               </div>
               <h3 className="text-2xl font-semibold text-gray-800">
-                Important Documents
+                Downloadable Documents
               </h3>
             </div>
 

@@ -20,6 +20,13 @@ const galleryImage = {
       validation: (Rule: { required: () => any }) => Rule.required(),
     },
     {
+      name: "title",
+      title: "Story Title",
+      type: "string",
+      description: "Short title for the story or moment.",
+      validation: (Rule: { required: () => any }) => Rule.required(),
+    },
+    {
       name: "category",
       title: "Category",
       type: "string",

@@ -104,7 +104,7 @@ export default function AcademicsWithImages() {
             className="relative rounded-2xl overflow-hidden shadow-xl h-80 md:h-96"
           >
             <Image
-              src="https://images.unsplash.com/photo-1588072432836-e10032774350"
+              src="/Student.jpg"
               alt="Secondary students in class"
               fill
               className="object-cover"

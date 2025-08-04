@@ -33,15 +33,13 @@ export function NavBar() {
   };
 
   const navLinks = [
-    { href: "/about", text: "About" },
-    { href: "/#academics", text: "Academics" },
-    { href: "/#admissions", text: "Admissions" },
+    { href: "/#blog", Color: "text-sky-500", text: "BLOG" },
+    { href: "/#leadership", text: "STAFF" },
+    { href: "/#Downloadable ", text: "Download Docs " },
 
-    { href: "/#leadership", text: "Leadership" },
-
-    { href: "/#school-life", text: "School life" },
-
-    { href: "/#contact", text: "Contact Us" },
+    { href: "/#in-action", text: " IN ACTION" },
+    { href: "/about", text: "ABOUT US" },
+    { href: "/#contact", text: "CONTACT US" },
   ];
 
   return (
@@ -71,7 +69,7 @@ export function NavBar() {
                   height={60}
                   alt={""}
                 ></Image>{" "}
-                G.S Mater <span className="text-sky-500">Dei</span> Nyanza
+                G.S MATER<span className="text-sky-500"> DEI</span> NYANZA
               </motion.span>
             </Link>
           </motion.div>
@@ -85,7 +83,7 @@ export function NavBar() {
               <motion.div key={link.href} variants={itemVariants}>
                 <Link
                   href={link.href}
-                  className={`${
+                  className={` ${link?.Color}  ${
                     isScrolled
                       ? "text-sky-500 hover:bg-sky-400"
                       : "text-indigo-100 hover:text-sky-500"

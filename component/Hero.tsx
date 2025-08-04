@@ -130,7 +130,7 @@ export default function Hero() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Since 1952
+                {" "} Since 1952
                 </motion.span>{" "}
               </motion.h1>
 

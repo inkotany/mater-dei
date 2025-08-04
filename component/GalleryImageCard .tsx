@@ -5,6 +5,10 @@ import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import { ZoomIn, Hand, X } from "lucide-react";
 
+function truncateText(text: string, maxLength: number) {
+  return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+}
+
 type GalleryImage = {
   _id: string;
   image?: {
@@ -14,6 +18,7 @@ type GalleryImage = {
   };
   alt: string;
   category: string;
+  title?: string;
   description?: string;
 };
 
@@ -45,6 +50,7 @@ export default function GalleryImageCard() {
               }
             },
             alt,
+            title,
             category,
             description
           }`
@@ -86,7 +92,7 @@ export default function GalleryImageCard() {
   }
 
   return (
-    <div className="pb-12">
+    <div id="blog" className="pb-12">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -94,7 +100,9 @@ export default function GalleryImageCard() {
         transition={{ duration: 0.5 }}
         className="text-center mb-16 px-4"
       >
-        <h2 className="text-4xl font-bold text-sky-700 mb-4">School Gallery</h2>
+        <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          <span className=" text-sky-700">Blog && </span> Gallery
+        </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           Explore moments from our vibrant school community
         </p>
@@ -110,17 +118,17 @@ export default function GalleryImageCard() {
             transition={{ duration: 0.5 }}
             whileHover={{ y: -5 }}
             whileTap={{ scale: 0.98 }}
-            className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 relative group"
+            className="bg-white flex rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 relative group"
           >
             {/* Click Prompt */}
-            <div className="absolute top-3 right-3 z-10 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full flex items-center text-xs font-medium text-gray-800 shadow-sm">
+            <div className="absolute top-3 left-3 z-10 bg-sky-500 backdrop-blur-sm px-2 py-1 rounded-full flex items-center text-xs font-medium text-gray-800 shadow-sm">
               <Hand className="h-3 w-3 mr-1" />
               Click
             </div>
 
             {/* Image Container */}
             <div
-              className="relative h-64 w-full cursor-pointer"
+              className="relative h-60  w-300 cursor-pointer"
               onClick={() => setExpandedImage(image)}
             >
               <Image
@@ -139,15 +147,13 @@ export default function GalleryImageCard() {
 
             {/* Card Footer */}
             <div className="p-4">
-              <span className="inline-block bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
-                {image.category}
-              </span>
-              <h3 className="text-lg  text-gray-800">{image.alt}</h3>
-              {image.description && (
-                <p className="text-gray-600 text-sm mt-2 line-clamp-2">
-                  {image.description}
-                </p>
-              )}
+              {/* w */}
+              <h1 className="text-2xl font-bold text-gray-800 mb-2">
+                {image.title}
+              </h1>
+              <p className="text-sm font-medium text-gray-700 line-clamp-2">
+                {truncateText(image.alt, 200)}
+              </p>
             </div>
           </motion.div>
         ))}
@@ -159,23 +165,34 @@ export default function GalleryImageCard() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4 overflow-y-auto"
+          className="fixed inset-0 z-50 backdrop-blur-3xl bg-opacity-90 flex items-center justify-center p-4 overflow-y-auto"
           onClick={() => setExpandedImage(null)}
         >
           <motion.div
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
-            className="relative w-full max-w-4xl my-8"
+            className="relative bg-amber-0 h-120 overflow-hidden flex w-full max-w-4xl my-8"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative aspect-video w-full">
-              <Image
-                src={expandedImage.image?.asset?.url || "/placeholder.jpg"}
-                alt={expandedImage.alt}
-                fill
-                className="object-contain"
-                sizes="100vw"
-              />
+            <div className="bg-sky-0 rounded-xl overflow-hidden flex  w-full ">
+              <div className="relative aspect-video  w-[40%]">
+                <Image
+                  src={expandedImage.image?.asset?.url || "/placeholder.jpg"}
+                  alt={expandedImage.alt}
+                  fill
+                  className="object-contain"
+                  sizes="100vw"
+                />
+              </div>
+
+              <div className="relative   bg-amber-0 px-8  py-12 flex flex-col justify-start gap-7 w-[60%] max-h-[70vh] overflow-y-auto ">
+                <p className="text-2xl font-bold text-yellow-600 ">
+                  {expandedImage.title || "Untitled"}
+                </p>
+                <p className="text-zinc-800 font-normal text-sm leading-relaxed t">
+                  {expandedImage.alt}
+                </p>
+              </div>
             </div>
 
             <button

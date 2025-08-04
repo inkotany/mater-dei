@@ -11,6 +11,8 @@ import Footer from "@/component/Footer";
 
 import SchoolStats from "@/component/SchoolStats";
 import AcademicsWithImages from "@/component/AcademicsWithImages";
+import AboutusComponent from "@/component/aboutusComponent";
+import VideoParticipationGrid from "@/component/VideoTrend";
 
 export const metadata: Metadata = {
   title: "GS Mater Dei Nyanza",
@@ -84,6 +86,8 @@ export default async function LeaderList() {
     <>
       <Hero />
 
+      <AboutusComponent />
+
       <MissionVisionValues />
 
       <Leadership />
@@ -93,6 +97,8 @@ export default async function LeaderList() {
       <AcademicsWithImages />
 
       <GalleryImageCard />
+
+      <VideoParticipationGrid />
 
       <NewsAnnouncements />
 
