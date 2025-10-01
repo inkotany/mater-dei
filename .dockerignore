@@ -1,0 +1,36 @@
+# Node modules (they should be installed inside the container)
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build output
+.next
+out
+
+# Logs
+logs
+*.log
+*.log.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / editor files
+.vscode
+.idea
+
+# Optional: git
+.git
+.gitignore
+
+# Optional: coverage
+coverage
