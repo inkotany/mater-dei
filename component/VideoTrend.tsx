@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 
 interface VideoCard {
@@ -64,6 +65,7 @@ export default function VideoParticipationGrid() {
     <section id="in-action" className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,6 +83,7 @@ export default function VideoParticipationGrid() {
         </motion.div>
 
         {/* Video Grid */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {videos.map((video) => (
             <motion.div
@@ -146,17 +149,7 @@ export default function VideoParticipationGrid() {
           ))}
         </div>
 
-        {/* View More Button */}
-        {/* <div className="text-center mt-10">
-          <motion.a
-            href="#"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block bg-sky-600 hover:bg-sky-700 text-white font-medium px-6 py-3 rounded-lg shadow-md transition-all"
-          >
-            View More School Events
-          </motion.a>
-        </div> */}
+        {/* End of Video Grid */}
       </div>
     </section>
   );
