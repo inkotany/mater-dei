@@ -11,15 +11,10 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Copy lockfiles and package.json
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* .npmrc* ./
+COPY package.json pnpm-lock.yaml* .npmrc* ./
 
 # Install dependencies based on available lockfile
-RUN \
-    if [ -f yarn.lock ]; then yarn install --frozen-lockfile; \
-    elif [ -f package-lock.json ]; then npm ci; \
-    elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm install --frozen-lockfile; \
-    else echo "No lockfile found!" && exit 1; \
-    fi
+RUN pnpm install
 
 # --------------------------
 # Build stage
